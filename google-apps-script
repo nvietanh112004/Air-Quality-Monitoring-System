@@ -1,0 +1,27 @@
+function doGet(e) {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheets()[0]; // Lấy sheet đầu tiên
+  
+  // Lấy dữ liệu gửi từ ESP32
+  var allData = e.parameter.allData; 
+  
+  if (allData) {
+    var rows = allData.split("|");
+    
+    for (var i = 0; i < rows.length; i++) {
+      if (rows[i].trim().length > 10) { 
+        var columns = rows[i].split(",");
+        sheet.appendRow([
+          columns[0],              // Cột A: Giờ
+          parseFloat(columns[1]),  // Cột B: Nhiệt độ
+          parseFloat(columns[2]),  // Cột C: Độ ẩm
+          parseFloat(columns[3]),  // Cột D: Gas
+          parseFloat(columns[4]),  // Cột E: PM 2.5
+          parseFloat(columns[5])   // Cột F: PM 10
+        ]);
+      }
+    }
+    return ContentService.createTextOutput("Success");
+  }
+  return ContentService.createTextOutput("No Data");
+}
