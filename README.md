@@ -41,6 +41,3 @@ This project is just the beginning. There’s room for numerous improvements and
 * **UI Refinement**: Developing a more interactive and data-rich local web dashboard.
 
 I welcome contributions from anyone interested in taking this project further. Whether you’re looking to add features, optimize the code, or propose new ideas, your input is valued.
-
-![cbf13f2f-ea43-4f09-b93a-094669a6b34d](https://github.com/user-attachments/assets/5fe5b4a9-0973-4bf3-8cff-e61cf96fe844)
-
